@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "weekly_products",
+  "info": {
+    "singularName": "weekly-product",
+    "pluralName": "weekly-products",
+    "displayName": "Weekly Product",
+    "description": "Products available on a weekly basis"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "weight": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "price": {
+      "type": "integer",
+      "required": true
+    },
+    "image_url": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"],
+      "required": false
+    },
+
+    "locale": {
+      "type": "string",
+      "maxLength": 10
+    },
+    "created_by": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}
