@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "nursery_products",
+  "info": {
+    "singularName": "nursery-product",
+    "pluralName": "nursery-products",
+    "displayName": "Nursery Product",
+    "description": "Products available in the nursery"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "pot_size": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "price": {
+      "type": "integer",
+      "required": true
+    },
+    "image_url": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"],
+      "required": false
+    },
+    "locale": {
+      "type": "string",
+      "maxLength": 10
+    },
+    "created_by": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}
